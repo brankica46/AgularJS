@@ -1,0 +1,97 @@
+.search-icon {
+    margin-left: 10px;
+    margin-top: 8px;
+    color: white;
+}
+
+.search {
+    background-color:#595f64;
+    border-color: #595f64;
+    width: 250px;
+}
+
+.table {
+    margin-left: 1%;
+    width: 98%;
+}
+
+.desniDiv {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.leviDiv {
+   margin-right: -15px;
+   padding: 0;
+}
+
+.naslov {
+    font-family: 'Faster One', cursive;
+    color: white;
+    margin-left: 5%;
+}
+
+.heading-table,.link-in-table, .details {
+    color: #666666;
+    font-weight: bold;
+}
+
+.link-in-table:hover {
+    color: #476147;
+    text-decoration: none;
+}
+
+.heading-table {
+    margin-left: 10px;
+    background-color: lightgrey;
+}
+
+.side-links {
+    width: 100%;
+}
+
+.main-image {
+    width: 100%;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.content{
+    background-image: url("../img/lightGray.png");
+}
+.driver-image {
+    width: auto;
+}
+
+.helmet {
+    height: 18px;
+}
+
+.flag1 {
+    height: 40px;
+}
+
+.formula {
+    height: 28px;
+}
+
+.season-text {
+    color: white;
+}
+.white {
+    color: white;
+}
+
+.about {
+    margin-left: 20px;
+}
+
+.flag-image-small {
+    max-width: 30px;
+}
+
+.flag-image-middle {
+    max-width: 50px;
+}

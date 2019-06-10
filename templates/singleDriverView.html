@@ -1,0 +1,76 @@
+<div>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#!/"><button class="btn btn-secondary"><i class="fas fa-home"></i> F-1 Feeder</button></a>
+                <a href="#!/"><button class="btn btn-secondary">Drivers</button></a>
+                <button class="btn btn-info">{{fullName}}</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content">
+    <div class="bg">
+        <h1 class="naslov">Race Calendar</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <table style="font-size: 14px;" class="white about">
+                <tr>
+                    <td>
+                        <img ng-src="img/drivers/{{driverId}}.jpg" alt="Driver picture">
+                    </td>
+                    <td>
+                        <img ng-src="img/flags/{{nationality}}.png" class="img-fluid driver-image">
+                        <b>{{firstName}}</b>
+                        <b>{{lastName}}</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Country: </td>
+                    <td>{{nationality}}</td>
+                </tr>
+                <tr>
+                    <td>Team: </td>
+                    <td>{{team}}</td>
+                </tr>
+                <tr>
+                    <td>Birth: </td>
+                    <td>{{dob}}</td>
+                </tr>
+                <tr>
+                    <td>Biography: </td>
+                    <td><a href="{{bioUrl}}"><i class="fas fa-external-link-alt white"></i></a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-8">
+            <div class="table">
+                <table class="table table-bordered table-striped table-drivers" style="margin-left:110px;">
+                    <tr>
+                        <td colspan="5" class="heading-table"> Formula 1 {{season}} Results</td>
+                    </tr>
+                    <tr style="background-color:lightgray;">
+                        <th>Round</th>
+                        <th>Grand Prix</th>
+                        <th>Team</th>
+                        <th>Grid</th>
+                        <th>Race</th>
+                    </tr>
+                    <tr ng-repeat="race in races">
+                        <td>{{race.round}}</td>
+                        <td>
+                            <img ng-src="img/flags/{{race.Circuit.Location.country}}.png" class="img-fluid flag-image-small">
+                            {{race.raceName}}
+                        </td>
+                        <td>{{team}}</td>
+                        <td>{{race.Results[0].grid}}</td>
+                        <td style="background-color: {{colors[race.Results[0].position]}}">{{race.Results[0].position}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+

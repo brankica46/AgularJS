@@ -1,0 +1,130 @@
+
+<div>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="btn btn-secondary"><i class="fas fa-home"></i> F-1 Feeder</button>
+                <button class="btn btn-secondary">Races</button>
+                <button class="btn btn-info">{{raceName}}</button>
+            </div>
+           
+        </div>
+    </nav>
+<div class="content">
+    <div class="bg">
+        <h1 class="naslov">Race Calendar</h1>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-2">
+
+            <table style="font-size: 14px;" class="white about">
+                <tr>
+                    <td>
+                        <img ng-src="img/flags/{{flagNat}}.png" class="img-fluid flag-image-middle">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <b>{{raceName}}</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Country: </td>
+                    <td>{{country}}</td>
+                </tr>
+                <tr>
+                    <td>Location: </td>
+                    <td>{{location}}</td>
+                </tr>
+                <tr>
+                    <td>Date: </td>
+                    <td>{{date}}</td>
+                </tr>
+                <tr>
+                    <td>Full report: </td>
+                    <td><a href="{{url}}"><i class="fas fa-external-link-alt white"></i></a></td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div>
+                <div class="table">
+                    <table class="table table-bordered table-striped table-drivers" style="font-size: 13px;">
+                        <tr>
+                            <td colspan="4" class="heading-table">Qualifying Results</td>
+                        </tr>
+                        <tr style="background-color:lightgray;height: 62px;">
+                            <th>Pos</th>
+                            <th>Driver</th>
+                            <th>Team</th>
+                            <th>Best Time</th>
+                        </tr>
+                        <tr ng-repeat="races in racesGP">
+                            <td>
+                                {{races.position}}
+                            </td>
+                            <td>
+                                <img ng-src="img/flags/{{races.Driver.nationality}}.png" alt="flag" class="img-fluid flag-image-middle">
+                                {{races.Driver.familyName}}
+                            </td>
+                            <td>
+                                {{races.Constructor.name}}
+                            </td>
+                            <td>
+                                {{quaPool[$index]}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-5">
+
+            <!--****** Ovdee drugiii URL ********-->
+            <div>
+                <div class="table">
+                    <table class="table table-bordered table-striped table-drivers" style="font-size: 13px;">
+                        <tr>
+                            <td colspan="5" class="heading-table"> Race results</td>
+                        </tr>
+                        <tr style="background-color:lightgray;height: 62px;">
+                            <th>Pos</th>
+                            <th>Driver</th>
+                            <th>Team</th>
+                            <th>Result</th>
+                            <th>Points</th>
+                        </tr>
+                        <tr ng-repeat="races in racesRes">
+                            <td>
+                                {{races.position}}
+                            </td>
+                            <td>
+                                <img ng-src="img/flags/{{races.Driver.nationality}}.png" alt="flag" class="img-fluid flag-image-middle">
+                                {{races.Driver.familyName}}
+                            </td>
+                            <td>
+                                {{races.Constructor.name}}
+                            </td>
+                            <td>
+                                {{races.Time.time}}
+                            </td>
+                            <td style="background-color:{{colors[races.points]}}">
+                                {{races.points}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>

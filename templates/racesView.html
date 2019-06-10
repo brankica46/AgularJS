@@ -1,0 +1,62 @@
+<div>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="btn btn-secondary"><i class="fas fa-home"></i> F-1 Feeder</button>
+                <button class="btn btn-info">Races</button>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><input type="text" placeholder="Search..." class="form-control form-control-sm search" ng-model="searchText"></li>
+                <li><a href="#"><i class="fas fa-search search-icon" style="color: white"> </i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="bg">
+            <h1 class="naslov">Race Calendar</h1>
+        </div>
+
+        <div class="table">
+            <table class="table table-bordered table-striped table-drivers">
+                <tr>
+                    <td colspan="5" class="heading-table"> Race calendar - {{season}}</td>
+
+                </tr>
+                <th>Round</th>
+                <th>Grand Prix</th>
+                <th>Circuit</th>
+                <th>Date</th>
+                <th>Winner</th>
+                <tr>
+
+                </tr>
+                <tr ng-repeat="race in races | filter:searchText">
+                    <td class="bold">
+                        {{race.round}}
+                    </td>
+                    <td>
+                        <a href="#!/{{season}}/races/{{race.round}}" class="link-in-table">
+                            <img ng-src="img/flags/{{race.Circuit.Location.country}}.png" alt="flag" class="flag-image-small">
+                            {{race.raceName}}
+                        </a>
+                    </td>
+                    <td>
+                        {{race.Circuit.circuitName}}
+                    </td>
+                    <td class="bold">
+                        {{race.date}}
+                    </td>
+                    <td>
+                        <img ng-src="img/flags/{{race.Results[0].Driver.nationality}}.png" class="flag-image-small">
+                        {{race.Results[0].Driver.familyName}}
+                    </td>
+
+
+
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+

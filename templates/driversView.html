@@ -1,0 +1,43 @@
+<div>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="btn btn-secondary"><i class="fas fa-home"></i> F-1 Feeder</button>
+                <button class="btn btn-info">Drivers</button>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><input type="text" placeholder="Search..." class="form-control form-control-sm search" ng-model="searchText"></li>
+                <li><a href="#"><i class="fas fa-search search-icon"> </i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="bg">
+          <h1 class="naslov">Drivers Championship {{season}}</h1>
+        </div>
+
+        <div class="table">
+            <table class="table table-bordered table-striped table-drivers">
+                <tr>
+                    <td colspan="4" class="heading-table"> Drivers Championship Standings - {{season}}</td>
+                </tr>
+                <tr ng-repeat="driver in drivers | filter:searchText">
+                    <td class="bold">
+                        {{driver.position}}
+                    </td>
+                    <td>
+                        <img ng-src="img/flags/{{driver.Driver.nationality}}.png" class="img-fluid flag-image-middle">
+                        <a href="#!/{{season}}/drivers/{{driver.Driver.driverId}}" class="link-in-table">{{driver.Driver.givenName}} {{driver.Driver.familyName}}</a>
+                    </td>
+                    <td>
+                        {{driver.Constructors[0].name}}
+                    </td>
+                    <td class="bold">
+                        {{driver.points}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

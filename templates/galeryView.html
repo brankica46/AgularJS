@@ -1,0 +1,11 @@
+<div>
+    Galery view
+</div>
+<div class="row">
+    <div ng-repeat="link in links | orderBy:'id': false" class="col-md-4">
+        <p>{{link.naziv}}</p>
+        <a href="#!/galery/{{link.id}}">
+            <img ng-src="{{link.slika}}">
+        </a>
+    </div>
+</div>

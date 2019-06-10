@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>F1 - Zavrsni projekat</title>
+    <link type="text/css" rel="stylesheet" href="vendor/bootstrap/bootstrap.4.2.1.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Faster+One|Lobster|Lobster+Two|Srisakdi" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app="f1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 bg bg-dark leviDiv">
+                <div>
+                    <img class="main-image" src="img/tocak.PNG">
+                </div>
+                <div class="btn-group-vertical side-links" ng-controller="seasonCtrl">
+                    <div>
+                        <label for="season-picker" class="season-text">Season: </label>
+                        <select id="season-picker" class="btn btn-secondary"
+                                ng-model="season"
+                                ng-options="x for x in seasonList"
+                                ng-change="updateState()">
+                        </select>
+                    </div>
+                    <a href="#!/{{season}}" class="btn btn-secondary"><img src="img/helmet1.png" class="side-link helmet"> Drivers</a>
+                    <a href="#!/{{season}}/teams" class="btn btn-secondary"><img src="img/car-of-formula-11.png" class="side-link formula"> Teams</a>
+                    <a href="#!/{{season}}/races" class="btn btn-secondary"><img src="img/flag1.png" class="side-link flag1"> Races</a>
+                </div>
+            </div>
+            <div class="col-md-10 desniDiv">
+                <ng-view></ng-view>
+            </div>
+        </div>
+    </div>
+    <script src="vendor/jquery/jquery.3.3.1.min.js"></script>
+    <script src="vendor/popper/popper.1.14.6.js"></script>
+    <script src="vendor/angularjs/angular.1.7.5.js"></script>
+    <script src="vendor/angularjs/angular.1.7.5.route.js"></script>
+    <script src="vendor/bootstrap/bootstrap.4.2.1.js"></script>
+    <script src="scripts/app.js"></script>
+    <!--<script src="scripts/controllers/driversCtrl.js"></script>-->
+    <!--<script src="scripts/controllers/racesCtrl.js"></script>-->
+    <!--<script src="scripts/controllers/teamsCtrl.js"></script>-->
+    <!--<script src="scripts/controllers/driverDetailsCtrl.js"></script>-->
+    <!--<script src="scripts/controllers/racesGrandPrixCtrl.js"></script>-->
+    <!--<script src="scripts/controllers/teamDetailsCtrl.js"></script>-->
+    <!--<script src="scripts/controllers/seasonCtrl.js"></script>-->
+    <!--<script src="scripts/filters/numFilter.js"></script>-->
+    <script src="dist/index.js"></script>
+
+</body>
+</html>

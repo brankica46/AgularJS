@@ -1,0 +1,46 @@
+<div>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="btn btn-secondary"><i class="fas fa-home"></i> F-1 Feeder</button>
+                <button class="btn btn-info">Teams</button>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><input type="text" placeholder="Search..." class="form-control form-control-sm search" ng-model="searchText"></li>
+                <li><a href="#"><i class="fas fa-search search-icon" style="color: white"> </i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+    <div class="bg">
+        <h1 class="naslov">Constructors Championship</h1>
+    </div>
+
+    <div class="table">
+        <table class="table table-bordered table-striped table-drivers">
+            <tr>
+                <td colspan="4" class="heading-table"> Constructors Championship Standings - {{season}}</td>
+
+            </tr>
+            <tr ng-repeat="team in teams | filter:searchText">
+                <td class="bold">
+                    {{team.position}}
+                </td>
+                <td>
+                    <a href="#!/{{season}}/teams/{{team.Constructor.constructorId}}" class="link-in-table">
+                        <img ng-src="img/flags/{{team.Constructor.nationality}}.png" alt="flag" class="flag-image-middle">
+                        {{team.Constructor.name}}
+                    </a>
+                </td>
+                <td>
+                    <a href="{{team.Constructor.url}}" class="details"> Details <i class="fas fa-external-link-alt"></i></a>
+                </td>
+                <td class="bold">
+                    {{team.points}}
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</div>
